@@ -103,6 +103,25 @@ a{text-decoration:none;color:inherit}
 @media (min-width:861px){.hero{padding:60px 0 54px}}
 @media (max-width:860px){.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}.includes-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.imgs-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.container{width:min(100% - 20px,1080px)}.section{padding:30px 0}.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}.includes-grid{grid-template-columns:1fr}.proof-grid{grid-template-columns:1fr}.imgs-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.imgs-grid .thumb img{height:120px}.btn.full{max-width:100%}.hero-grid .btn{width:100%;max-width:340px}.price-block{padding:1.1rem 1rem 1.35rem}.price-block .new{font-size:clamp(2.1rem,11vw,2.8rem)}.offer-compact,.cta-box{padding:1.1rem 1rem 1.35rem}}
+
+/* Bônus iFood */
+.bonus-card{background:rgba(255,255,255,.05);border:1px solid rgba(217,177,77,.5);border-radius:14px;padding:20px;max-width:680px;margin:0 auto}
+.bonus-card h3{margin:0 0 8px;color:var(--gold);font-family:'Playfair Display',serif;font-size:1.3rem}
+.bonus-card p.desc{margin:0 0 14px;font-size:.9rem;opacity:.92;line-height:1.6}
+.bonus-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 16px}
+.bonus-list li{position:relative;padding-left:20px;font-size:.85rem;opacity:.95}
+.bonus-list li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:800}
+
+/* Como funciona */
+.howto-box{max-width:640px;margin:0 auto;text-align:center}
+.howto-box p{font-size:.95rem;opacity:.92;line-height:1.7}
+
+/* Garantia */
+.guarantee-wrap{max-width:720px;margin:0 auto;text-align:center}
+.guarantee-badge{width:96px;height:96px;border-radius:50%;border:3px solid var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;background:rgba(217,177,77,.08);box-shadow:0 10px 20px rgba(0,0,0,.08)}
+.guarantee-badge span{font-family:'Playfair Display',serif;font-weight:800;font-size:.78rem;color:var(--gold);letter-spacing:.05em;line-height:1.2;text-transform:uppercase}
+.guarantee-wrap p.desc{max-width:560px;margin:0 auto 22px;font-size:.92rem;opacity:.9;line-height:1.65}
+@media (max-width:560px){.bonus-list{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -180,8 +199,36 @@ a{text-decoration:none;color:inherit}
           </ul>
         </div>
       </div>
+
+      <!-- BÔNUS: GUIA IFOOD -->
+      <div class="bonus-card fade-up" style="margin-top:20px">
+        <h3>Bônus exclusivo: Guia Como Vender no iFood</h3>
+        <p class="desc">Além das 650 receitas, você leva de bônus um guia completo e específico para começar a vender também pelo iFood.</p>
+        <ul class="bonus-list">
+          <li>Profissão Salgadeira</li>
+          <li>Materiais e utensílios básicos</li>
+          <li>Receitas completas</li>
+          <li>Higiene e cuidados</li>
+          <li>Fritura perfeita</li>
+          <li>Embalagem e armazenamento</li>
+        </ul>
+      </div>
     </div>
   </section>
+
+  <!-- COMO FUNCIONA O ACESSO -->
+  <section class="section cream">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="eyebrow">Acesso imediato</span>
+        <h2>Estude onde e quando quiser!</h2>
+      </div>
+      <div class="howto-box fade-up">
+        <p>Após a confirmação do pedido, você recebe um e-mail com todos os dados para acessar sua área restrita. Ao fazer login, você já tem acesso ao curso completo, podendo baixar e imprimir os materiais.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="section cream">
     <div class="container">
       <div class="section-header fade-up">
@@ -269,6 +316,27 @@ a{text-decoration:none;color:inherit}
       </div>
     </div>
   </section>
+
+  <!-- GARANTIA INCONDICIONAL -->
+  <section class="section deep">
+    <div class="container">
+      <div class="guarantee-wrap">
+        <div class="guarantee-badge fade-up">
+          <span>Risco<br>Zero</span>
+        </div>
+        <div class="section-header fade-up">
+          <h2>Garantia Incondicional!</h2>
+        </div>
+        <p class="desc fade-up">Ainda não tem certeza? Não se preocupe. Se o conteúdo não for o que você esperava, você tem 7 dias de garantia e devolvemos seu dinheiro sem burocracia.</p>
+      </div>
+      <div class="grid3" style="grid-template-columns:repeat(3,minmax(0,1fr));max-width:720px;margin:0 auto">
+        <div class="mini-card fade-up"><span class="ic">🔒</span><h4>Compra 100% segura</h4><p>Ambiente de pagamento protegido</p></div>
+        <div class="mini-card fade-up"><span class="ic">🛡️</span><h4>Seus dados protegidos</h4><p>Informações tratadas com sigilo</p></div>
+        <div class="mini-card fade-up"><span class="ic">💳</span><h4>Pagamento seguro e facilitado</h4><p>Diversas formas de pagamento</p></div>
+      </div>
+    </div>
+  </section>
+
   <div class="cta-final">
     <div class="container">
       <div class="cta-box fade-up">
