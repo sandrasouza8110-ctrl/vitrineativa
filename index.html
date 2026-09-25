@@ -70,9 +70,9 @@ a{text-decoration:none;color:inherit}
 .inc-card ul{list-style:none;margin:0;padding:0}
 .inc-card li{position:relative;padding-left:18px;margin:6px 0;font-size:.85rem;opacity:.95}
 .inc-card li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:800}
-.imgs-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.imgs-grid{display:grid;grid-template-columns:1fr;gap:1.25rem}
 .imgs-grid .thumb{border-radius:12px;overflow:hidden;border:1px solid var(--line);box-shadow:0 8px 16px var(--shadow)}
-.imgs-grid .thumb img{width:100%;height:150px;object-fit:cover;display:block}
+.imgs-grid .thumb img{width:100%;height:auto;max-height:420px;object-fit:cover;display:block}
 .imgs-grid .thumb .cap{display:block;font-size:.68rem;text-align:center;padding:.4rem .35rem;color:var(--ink);opacity:.75;background:#fff;line-height:1.35}
 .proof-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .proof-card{background:#fff;border:1px solid rgba(217,177,77,.5);border-radius:14px;overflow:hidden;box-shadow:0 14px 22px rgba(0,0,0,.08)}
@@ -101,8 +101,8 @@ a{text-decoration:none;color:inherit}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
 @media (prefers-reduced-motion:reduce){.fade-up{opacity:1!important;transform:none!important;transition:none!important}.price-block .new.pulse{animation:none}}
 @media (min-width:861px){.hero{padding:60px 0 54px}}
-@media (max-width:860px){.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}.includes-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.imgs-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:560px){.container{width:min(100% - 20px,1080px)}.section{padding:30px 0}.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}.includes-grid{grid-template-columns:1fr}.proof-grid{grid-template-columns:1fr}.imgs-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.imgs-grid .thumb img{height:120px}.btn.full{max-width:100%}.hero-grid .btn{width:100%;max-width:340px}.price-block{padding:1.1rem 1rem 1.35rem}.price-block .new{font-size:clamp(2.1rem,11vw,2.8rem)}.offer-compact,.cta-box{padding:1.1rem 1rem 1.35rem}}
+@media (max-width:860px){.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}.includes-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.imgs-grid{grid-template-columns:1fr;gap:1.25rem}}
+@media (max-width:560px){.container{width:min(100% - 20px,1080px)}.section{padding:30px 0}.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}.includes-grid{grid-template-columns:1fr}.proof-grid{grid-template-columns:1fr}.imgs-grid{grid-template-columns:1fr;gap:1.25rem}.imgs-grid .thumb img{height:auto;max-height:280px}.btn.full{max-width:100%}.hero-grid .btn{width:100%;max-width:340px}.price-block{padding:1.1rem 1rem 1.35rem}.price-block .new{font-size:clamp(2.1rem,11vw,2.8rem)}.offer-compact,.cta-box{padding:1.1rem 1rem 1.35rem}}
 
 /* Bônus iFood */
 .bonus-card{background:rgba(255,255,255,.05);border:1px solid rgba(217,177,77,.5);border-radius:14px;padding:20px;max-width:680px;margin:0 auto}
@@ -199,8 +199,6 @@ a{text-decoration:none;color:inherit}
           </ul>
         </div>
       </div>
-
-      <!-- BÔNUS: GUIA IFOOD -->
       <div class="bonus-card fade-up" style="margin-top:20px">
         <h3>Bônus exclusivo: Guia Como Vender no iFood</h3>
         <p class="desc">Além das 650 receitas, você leva de bônus um guia completo e específico para começar a vender também pelo iFood.</p>
@@ -215,8 +213,6 @@ a{text-decoration:none;color:inherit}
       </div>
     </div>
   </section>
-
-  <!-- COMO FUNCIONA O ACESSO -->
   <section class="section cream">
     <div class="container">
       <div class="section-header fade-up">
@@ -228,7 +224,6 @@ a{text-decoration:none;color:inherit}
       </div>
     </div>
   </section>
-
   <section class="section cream">
     <div class="container">
       <div class="section-header fade-up">
@@ -316,8 +311,6 @@ a{text-decoration:none;color:inherit}
       </div>
     </div>
   </section>
-
-  <!-- GARANTIA INCONDICIONAL -->
   <section class="section deep">
     <div class="container">
       <div class="guarantee-wrap">
@@ -336,7 +329,6 @@ a{text-decoration:none;color:inherit}
       </div>
     </div>
   </section>
-
   <div class="cta-final">
     <div class="container">
       <div class="cta-box fade-up">
