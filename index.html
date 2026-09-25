@@ -21,303 +21,361 @@
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1752243806106313&ev=PageView&noscript=1"></noscript>
   <!-- End Meta Pixel Code -->
   <style>
-    :root{
-      --ink:#241914;
+    :root {
+      --ink:#1f120d;
       --muted:#6d5d55;
-      --cream:#fff8ef;
-      --peach:#f8d7bf;
-      --orange:#c94f2d;
+      --cream:#fffaf4;
+      --peach:#f9dfc5;
+      --orange:#cf4d2d;
       --orange-dark:#9e351e;
-      --green:#254b3d;
-      --line:#eadbd0;
+      --green:#224c3e;
+      --green-dark:#17382e;
+      --line:#ead7c8;
       --white:#fff;
-      --dark-brown:#3d2817;
-      --gold:#d4af37;
+      --dark:#2d1a10;
+      --gold:#d7b155;
       --red:#e63946;
+      --shadow: rgba(23, 11, 7, 0.18);
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
       color:var(--ink);
-      background:#3d2817;
+      background:#f5efe9;
       font-family:'DM Sans',Arial,sans-serif;
-      line-height:1.6
+      line-height:1.6;
     }
-    img{display:block;max-width:100%;height:auto}
+
+    img,video{display:block;max-width:100%;height:auto}
     a{text-decoration:none;color:inherit}
-    .container{width:min(100% - 60px,1000px);margin:0 auto}
-    .topbar{background:var(--dark-brown);color:var(--gold);text-align:center;padding:12px 0;font-size:14px;font-weight:600}
-    .hero{background:linear-gradient(135deg, #3d2817 0%, #2a1810 100%);color:var(--white);padding:40px 0 60px;position:relative;overflow:hidden}
-    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-    .hero-copy h1{font-family:'Playfair Display',serif;font-size:52px;line-height:1.1;margin:16px 0;color:var(--white)}
+    .container{width:min(100% - 30px, 1100px);margin:0 auto}
+    .topbar{background:var(--dark);color:var(--gold);text-align:center;padding:12px 0;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase}
+
+    .hero{
+      background:linear-gradient(135deg,#2d1a10 0%, #1a110d 100%);
+      color:var(--white);
+      padding:28px 0 60px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:auto -10% -18% auto;
+      width:360px;height:360px;
+      border-radius:50%;
+      background:rgba(215,177,85,0.08);
+      filter:blur(20px);
+    }
+    .hero-grid{display:grid;grid-template-columns: 1.05fr 0.95fr;gap:42px;align-items:center;position:relative;z-index:1}
+    .eyebrow{
+      display:inline-block;
+      text-transform:uppercase;
+      letter-spacing:0.12em;
+      font-weight:700;
+      font-size:12px;
+      color:var(--gold);
+      margin-bottom:14px;
+    }
+    .hero-copy h1{
+      margin:0 0 14px 0;
+      font-family:'Playfair Display',serif;
+      font-size:clamp(2.4rem, 5vw, 4.2rem);
+      line-height:0.96;
+      color:var(--white);
+      letter-spacing:-0.04em;
+    }
     .hero-copy h1 strong{color:var(--gold)}
-    .hero-copy p{font-size:18px;color:#f0f0f0;margin:20px 0}
-    .eyebrow{display:block;text-transform:uppercase;font-size:13px;letter-spacing:2px;color:var(--gold);font-weight:600;margin-bottom:12px}
-    .hero-actions{margin:30px 0}
-    .btn{display:inline-block;padding:16px 32px;border-radius:8px;font-weight:600;font-size:16px;cursor:pointer;transition:all 0.3s ease;text-align:center;text-decoration:none}
-    .btn.buy{background:var(--red);color:var(--white);border:none}
-    .btn.buy:hover{background:#d63040;transform:translateY(-2px);box-shadow:0 8px 16px rgba(230,57,70,0.3)}
-    .btn.light{background:rgba(212,175,55,0.2);color:var(--gold);border:2px solid var(--gold)}
-    .btn.light:hover{background:rgba(212,175,55,0.3)}
-    .microcopy{font-size:13px;color:#d4d4d4;margin-top:16px}
-    .price-display{background:rgba(212,175,55,0.1);border:2px solid var(--gold);border-radius:12px;padding:20px;text-align:center;margin:20px 0}
-    .price-display .old-price{font-size:18px;text-decoration:line-through;color:var(--muted);margin-bottom:8px}
-    .price-display .new-price{font-size:48px;font-weight:700;color:var(--gold);font-family:'Playfair Display',serif}
-    .price-display .small-text{font-size:14px;color:#d4d4d4;margin-top:8px}
-    .hero-visual{position:relative}
-    .hero-visual video{width:100%;border-radius:12px;box-shadow:0 20px 40px rgba(0,0,0,0.4)}
-    .badge{position:absolute;bottom:20px;right:20px;background:var(--red);color:var(--white);padding:12px 20px;border-radius:50px;font-weight:700;box-shadow:0 8px 16px rgba(0,0,0,0.3)}
-    .badge b{font-size:24px;display:block}
-    main{background:var(--dark-brown)}
-    .section{padding:80px 0;background:var(--dark-brown)}
-    .section.cream{background:linear-gradient(135deg, #f5f5f0 0%, #f9f7f4 100%);color:var(--ink)}
-    .section.cream .eyebrow{color:var(--orange)}
-    .section.cream h2{color:var(--ink)}
-    .section.cream p{color:var(--ink)}
-    .section.green{background:linear-gradient(135deg, #254b3d 0%, #1a3a2e 100%);color:var(--white)}
-    .section.green h2{color:var(--white)}
-    .section.green p{color:#e0e0e0}
-    .section.green .eyebrow{color:var(--gold)}
-    .intro{text-align:center;margin-bottom:60px}
-    .intro h2{font-family:'Playfair Display',serif;font-size:42px;line-height:1.1;margin:16px 0}
-    .intro p{font-size:18px;max-width:600px;margin:20px auto;color:inherit}
-    .split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+    .hero-copy p{font-size:1.08rem;line-height:1.7;color:#f7f0eb;margin:0 0 18px}
+    .price-card{
+      margin:22px 0 18px;
+      padding:18px 20px 16px;
+      background:rgba(215,177,85,0.08);
+      border:1px solid rgba(215,177,85,0.6);
+      border-radius:14px;
+      max-width:380px;
+      text-align:center;
+      box-shadow:0 10px 24px rgba(0,0,0,0.14);
+    }
+    .price-card .old{font-size:1.2rem;color:#d7c8bf;text-decoration:line-through;display:block}
+    .price-card .small{display:block;font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;color:#f5e6ce;margin-top:6px}
+    .price-card .new{font-size:clamp(2.4rem, 4vw, 3.6rem);line-height:1;font-weight:800;color:var(--gold);font-family:'Playfair Display',serif;display:block;margin:8px 0 0}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:18px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      min-height:58px;padding:0 26px;border-radius:12px;font-weight:800;font-size:0.98rem;letter-spacing:0.02em;
+      text-transform:uppercase;cursor:pointer;transition:transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn.buy{background:var(--red);color:var(--white);box-shadow:0 15px 22px rgba(230,57,70,0.28)}
+    .btn.light{background:rgba(215,177,85,0.12);border:1px solid rgba(215,177,85,0.8);color:var(--gold)}
+    .microcopy{margin-top:18px;color:#dccfc5;font-size:0.82rem}
+    .hero-video{position:relative}
+    .hero-video video{width:100%;border-radius:14px;box-shadow:0 20px 40px rgba(0,0,0,0.35);background:#140d0b;border:1px solid rgba(255,255,255,0.08)}
+    .hero-badge{
+      position:absolute;right:18px;bottom:18px;background:var(--red);color:var(--white);
+      border-radius:999px;padding:10px 18px;font-weight:800;font-size:0.82rem;box-shadow:0 12px 24px rgba(230,57,70,0.28);
+    }
+    .hero-badge strong{display:block;font-size:1.3rem;line-height:1.1}
+
+    .section{padding:72px 0}
+    .section.cream{background:linear-gradient(135deg,#fffaf5 0%,#f5efe9 100%)}
+    .section.green{background:linear-gradient(135deg,#244c3e 0%, #17382e 100%);color:var(--white)}
+    .section.dark-brown{background:var(--dark);color:var(--white)}
+    .section-header{text-align:center;margin-bottom:30px}
+    .section-header h2{font-family:'Playfair Display',serif;font-size:clamp(2rem, 4vw, 3rem);margin:8px 0 12px;line-height:1.08;letter-spacing:-0.03em}
+    .section-header p{max-width:680px;margin:0 auto;color:inherit;opacity:0.9;font-size:1.06rem}
+
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
     .split.reverse{direction:rtl}
     .split.reverse > *{direction:ltr}
-    .split-image{border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.2)}
-    .split-image img{width:100%;display:block}
-    .split-copy h3{font-family:'Playfair Display',serif;font-size:32px;margin:16px 0;color:inherit}
-    .split-copy p{font-size:16px;line-height:1.8;color:inherit}
-    .split-copy ul{list-style:none;padding:0;margin:20px 0}
-    .split-copy li{padding:8px 0;padding-left:24px;position:relative;font-size:16px;color:inherit}
-    .split-copy li:before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:700}
-    .benefits-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:30px;margin:40px 0}
-    .benefit-card{background:rgba(212,175,55,0.1);border:1px solid var(--gold);border-radius:12px;padding:30px;text-align:center}
-    .benefit-card h4{font-size:18px;font-weight:700;margin:12px 0;color:var(--gold)}
-    .benefit-card p{font-size:14px;color:inherit;margin:0}
-    .offer{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-    .offer-visual{border-radius:12px;overflow:hidden}
-    .offer-visual img{width:100%;display:block}
-    .offer-copy h2{font-family:'Playfair Display',serif;font-size:42px;line-height:1.1;margin:16px 0;color:inherit}
-    .offer-copy p{font-size:16px;line-height:1.8;color:inherit;margin:20px 0}
-    .offer-promo{background:rgba(212,175,55,0.2);border:2px solid var(--gold);border-radius:12px;padding:30px;text-align:center;margin:30px 0}
-    .offer-promo .promo-text{font-size:14px;color:inherit;margin-bottom:20px;font-weight:600}
-    .faq{margin-top:40px}
-    .faq details{background:rgba(212,175,55,0.05);border-left:4px solid var(--gold);padding:20px;margin:16px 0;border-radius:4px;cursor:pointer}
-    .faq summary{font-weight:600;font-size:16px;color:inherit;cursor:pointer;outline:none}
-    .faq summary:hover{color:var(--gold)}
-    .faq details[open] summary{color:var(--gold)}
-    .faq p{margin:16px 0 0 0;color:inherit;line-height:1.8}
-    .footer{background:rgba(0,0,0,0.3);color:var(--white);padding:40px 0;text-align:center;font-size:13px;border-top:1px solid rgba(212,175,55,0.2)}
-    .footer p{margin:8px 0}
-    .sticky{position:fixed;bottom:20px;right:20px;z-index:1000;box-shadow:0 8px 24px rgba(0,0,0,0.3)}
-    @media(max-width:800px){
-      .container{width:min(100% - 30px,600px)}
-      .hero{padding:24px 0 48px}
-      .hero-grid,.split,.offer{grid-template-columns:1fr;gap:30px}
-      .hero-copy{padding:0}
-      .hero-copy h1{font-size:36px}
-      .btn{padding:14px 24px;font-size:14px}
-      .intro h2{font-size:28px}
-      .price-display .new-price{font-size:36px}
-      .split-image{margin-top:20px}
-      .badge{bottom:12px;right:12px;padding:10px 16px;font-size:12px}
-      .badge b{font-size:18px}
-      .split-copy h3{font-size:24px}
-      .offer-copy h2{font-size:28px}
-      .benefits-grid{grid-template-columns:repeat(2, 1fr);gap:20px}
-      .benefit-card{padding:20px}
-      .benefit-card h4{font-size:16px}
-      .offer-promo{padding:20px}
-      .faq details{padding:16px}
-      .section{padding:50px 0}
-      .sticky{bottom:16px;right:16px}
+    .split-media{overflow:hidden;border-radius:16px;box-shadow:0 18px 32px var(--shadow)}
+    .split-media img{width:100%;display:block}
+    .split-copy h3{font-family:'Playfair Display',serif;font-size:clamp(2rem, 3vw, 2.8rem);line-height:1.06;margin:0 0 16px;letter-spacing:-0.03em}
+    .split-copy p{margin:0 0 14px;font-size:1.02rem;line-height:1.8}
+    .check-list{list-style:none;padding:0;margin:20px 0 0}
+    .check-list li{position:relative;padding-left:28px;margin:10px 0;font-size:1rem}
+    .check-list li::before{content:"✓";position:absolute;left:0;top:0;color:var(--gold);font-weight:800}
+
+    .stats-grid{display:grid;grid-template-columns: repeat(3, minmax(180px, 1fr));gap:22px;margin-top:30px}
+    .stat-card{background:rgba(215,177,85,0.08);border:1px solid rgba(215,177,85,0.6);border-radius:16px;padding:26px 18px;text-align:center}
+    .stat-card strong{display:block;font-size:2.1rem;color:var(--gold);font-family:'Playfair Display',serif;line-height:1}
+    .stat-card span{display:block;margin-top:8px;font-weight:700}
+
+    .benefits-grid{display:grid;grid-template-columns:repeat(3, minmax(200px,1fr));gap:22px;margin-top:10px}
+    .benefit-card{background:rgba(255,255,255,0.04);border:1px solid rgba(215,177,85,0.35);border-radius:16px;padding:24px 20px;text-align:left}
+    .benefit-card h4{margin:0 0 8px;font-size:1.2rem;color:var(--gold)}
+    .benefit-card p{margin:0;color:inherit;opacity:0.9;line-height:1.7}
+
+    .offer-wrap{display:grid;grid-template-columns:0.95fr 1.05fr;gap:40px;align-items:center}
+    .offer-visual{overflow:hidden;border-radius:18px;box-shadow:0 18px 38px rgba(0,0,0,0.25)}
+    .offer-copy h3{font-family:'Playfair Display',serif;font-size:clamp(2rem, 4vw, 3.2rem);margin:0 0 12px;line-height:1.04}
+    .offer-copy p{margin:0 0 14px;font-size:1.04rem;line-height:1.8;color:inherit;opacity:0.94}
+    .offer-promo{margin:20px 0 26px;background:rgba(215,177,85,0.12);border:1px solid rgba(215,177,85,0.8);border-radius:16px;padding:20px 18px;text-align:center}
+    .offer-promo .promo-copy{font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:#f0dfb5;font-weight:700}
+    .offer-promo .old{display:block;font-size:1.3rem;text-decoration:line-through;color:#dbc9bd;margin-top:12px}
+    .offer-promo .new{display:block;font-size:4rem;font-family:'Playfair Display',serif;font-weight:800;line-height:1;color:var(--gold);margin-top:6px}
+    .offer-copy .btn{width:100%}
+
+    .faq{margin-top:22px;display:grid;gap:14px}
+    .faq details{background:rgba(215,177,85,0.04);border-left:4px solid var(--gold);border-radius:10px;padding:18px 20px}
+    .faq summary{list-style:none;cursor:pointer;font-weight:700;font-size:1.05rem}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq p{margin:12px 0 0;line-height:1.7;opacity:0.92}
+
+    .cta-band{padding:20px 0 90px;background:linear-gradient(180deg, #f5efe9 0%, #efe5dd 100%)}
+    .cta-box{background:linear-gradient(135deg,#2d1a10,#3e2a1d);border-radius:18px;padding:36px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;color:var(--white);box-shadow:0 18px 36px rgba(0,0,0,0.15)}
+    .cta-box h3{margin:0 0 8px;font-size:clamp(1.8rem,3vw,2.6rem);font-family:'Playfair Display',serif;line-height:1.08}
+    .cta-box p{margin:0;color:#eee2d8;max-width:560px}
+    .cta-box .btn{white-space:nowrap}
+
+    .footer{background:rgba(12,9,8,0.9);color:#ede2d8;padding:36px 0 60px;text-align:center;border-top:1px solid rgba(215,177,85,0.2)}
+    .footer p{margin:8px 0;font-size:0.82rem}
+    .sticky-btn{position:fixed;right:16px;bottom:16px;z-index:50;box-shadow:0 18px 26px rgba(0,0,0,0.2)}
+
+    @media (max-width: 860px){
+      .hero-grid,.split,.offer-wrap,.cta-box{grid-template-columns:1fr;display:grid}
+      .hero-grid{gap:26px}
+      .hero{padding-bottom:44px}
+      .price-card{max-width:100%}
+      .benefits-grid,.stats-grid{grid-template-columns:repeat(2,minmax(150px,1fr));gap:14px}
+      .cta-box{padding:26px 18px;justify-content:center;text-align:center}
+      .cta-box .btn{width:100%}
+    }
+    @media (max-width: 560px){
+      .container{width:min(100% - 24px, 1100px)}
+      .hero-copy h1{font-size:2.5rem}
+      .hero-actions{display:grid;grid-template-columns:1fr}
+      .btn{width:100%}
+      .stats-grid,.benefits-grid{grid-template-columns:1fr}
+      .section{padding:54px 0}
+      .offer-promo .new{font-size:2.8rem}
+      .sticky-btn{right:10px;bottom:10px}
     }
   </style>
 </head>
 <body>
   <div class="topbar">Método digital • receitas + produção + precificação + delivery</div>
-  
+
   <header class="hero">
     <div class="container hero-grid">
       <div class="hero-copy">
-        <span class="eyebrow">Cozinha que Rende</span>
-        <h1>Seu próximo cardápio começa com <strong>650 receitas</strong></h1>
-        <p>Aprenda preparos de salgados e doces e encontre conteúdos para organizar sua produção, precificar e trabalhar com delivery.</p>
-        
-        <div class="price-display">
-          <div class="old-price">De R$ 147,00</div>
-          <div class="new-price">R$ 27,00</div>
-          <div class="small-text">por apenas</div>
+        <span class="eyebrow">Cozinha que rende</span>
+        <h1>+650 receitas para transformar sua cozinha em um negócio lucrativo</h1>
+        <p>Aprenda receitas de salgados e doces, organize a produção, entenda precificação e domine estratégias de delivery com um método pensado para quem quer começar ou crescer.</p>
+
+        <div class="price-card">
+          <span class="old">De R$ 147,00</span>
+          <span class="small">por apenas</span>
+          <span class="new">R$ 27,00</span>
         </div>
-        
+
         <div class="hero-actions">
-          <a class="btn buy" href="https://pay.kiwify.com.br/3Y5RTDC?afid=GumG4jeK">SIM, QUERO COMEÇAR AGORA</a>
+          <a class="btn buy" href="https://pay.kiwify.com.br/3Y5RTDC?afid=GumG4jeK">Sim, quero começar agora</a>
         </div>
-        <p class="microcopy">Acesso ao conteúdo digital • Garantia de 7 dias</p>
+        <div class="microcopy">Acesso digital • Garantia de 7 dias</div>
       </div>
-      
-      <div class="hero-visual">
-        <video width="100%" controls playsinline preload="metadata">
+
+      <div class="hero-video">
+        <video controls playsinline preload="metadata">
           <source src="1b19f657-f48b-40b4-9567-4a32044d5ed2.MP4" type="video/mp4">
-          Seu navegador não suporta vídeos HTML5.
+          Seu navegador não suporta vídeo em HTML5.
         </video>
-        <div class="badge"><b>650</b> receitas para explorar</div>
+        <div class="hero-badge"><strong>650</strong> receitas</div>
       </div>
     </div>
   </header>
-  
+
   <main>
-    <!-- Seção: Salgados -->
     <section class="section cream">
       <div class="container split">
-        <div class="split-image">
+        <div class="split-media">
           <img src="09604F89-59C7-4B31-9837-DA99814C7281.PNG" alt="Variedade de salgados" loading="lazy">
         </div>
         <div class="split-copy">
-          <span class="eyebrow">Receitas Principais</span>
-          <h3>650 Receitas de Salgados e Doces</h3>
-          <p>Desde os clássicos até receitas inovadoras, você tem acesso a um acervo completo de preparos que vão do básico ao avançado. Explore salgados crocantes, doces irresistíveis e muito mais.</p>
-          <ul>
-            <li>Salgados variados e crocantes</li>
-            <li>Doces clássicos e modernos</li>
-            <li>Receitas passo a passo</li>
-            <li>Dicas de execução</li>
+          <span class="eyebrow">Receitas que fazem a diferença</span>
+          <h3>Um acervo completo para quem quer vender com sabor e organização</h3>
+          <p>Você vai encontrar receitas de salgados e doces criativas, práticas e funcionais para criar um cardápio mais forte, mais diversificado e mais valorizado.</p>
+          <ul class="check-list">
+            <li>Receitas para dias de alta demanda</li>
+            <li>Cardápio com variedade e bons preços</li>
+            <li>Conteúdo organizado e fácil de usar</li>
+            <li>Ferramentas para aumentar sua produtividade</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Seção: Benefícios -->
-    <section class="section">
+    <section class="section dark-brown">
       <div class="container">
-        <div class="intro">
-          <span class="eyebrow">Dentro do Método</span>
-          <h2>O que você recebe</h2>
-          <p>Muito mais que receitas. Conteúdo completo para você estruturar seu negócio.</p>
+        <div class="section-header">
+          <span class="eyebrow">Por que esse método funciona</span>
+          <h2>Mais do que receitas: um sistema completo</h2>
         </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <strong>650</strong>
+            <span>receitas</span>
+          </div>
+          <div class="stat-card">
+            <strong>+</strong>
+            <span>salgados e doces</span>
+          </div>
+          <div class="stat-card">
+            <strong>7</strong>
+            <span>dias de garantia</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cream">
+      <div class="container split reverse">
+        <div class="split-media">
+          <img src="B18B5337-6355-413F-82C4-83618936EF28.PNG" alt="Doces e variedade de produtos" loading="lazy">
+        </div>
+        <div class="split-copy">
+          <span class="eyebrow">Para crescer</span>
+          <h3>Receitas, produção e estratégia em um só lugar</h3>
+          <p>Não é só cozinhar. O método ajuda você a entender como organizar a produção, melhorar a precificação, controlar custos e atrair clientes com um cardápio que tem cara de profissional.</p>
+          <ul class="check-list">
+            <li>Estratégias para produção e organização</li>
+            <li>Conteúdo sobre precificação e custos</li>
+            <li>Ideias de expansão de cardápio</li>
+            <li>Orientação para atendimento e delivery</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section green">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Você vai receber</span>
+          <h2>Conteúdo que vai te apoiar do começo ao crescimento</h2>
+        </div>
+
         <div class="benefits-grid">
           <div class="benefit-card">
-            <h4>650 Receitas</h4>
-            <p>Acervo completo de salgados e doces para todos os níveis</p>
+            <h4>650 receitas</h4>
+            <p>Uma base completa para montar um cardápio diversificado e atrativo.</p>
           </div>
           <div class="benefit-card">
             <h4>Produção</h4>
-            <p>Guias práticos sobre como organizar sua produção</p>
+            <p>Aprenda a organizar a rotina, otimizar o tempo e produzir com mais eficiência.</p>
           </div>
           <div class="benefit-card">
             <h4>Precificação</h4>
-            <p>Saiba como precificar seus produtos corretamente</p>
+            <p>Entenda como definir valores que ajudem a vender sem perder rentabilidade.</p>
           </div>
           <div class="benefit-card">
             <h4>Delivery</h4>
-            <p>Conteúdo especializado para vendas com delivery</p>
+            <p>Descubra como vender com mais estratégia e melhorar sua operação como serviço.</p>
           </div>
           <div class="benefit-card">
-            <h4>Passo a Passo</h4>
-            <p>Cada receita com instruções claras e detalhadas</p>
+            <h4>Organização</h4>
+            <p>Melhore sua rotina e a gestão da sua cozinha com processos mais claros.</p>
           </div>
           <div class="benefit-card">
-            <h4>Acesso Digital</h4>
-            <p>Consulte quando quiser, no seu ritmo</p>
+            <h4>Acesso digital</h4>
+            <p>Consulte os conteúdos no seu ritmo, onde e quando quiser.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Seção: Doces -->
     <section class="section cream">
-      <div class="container split reverse">
-        <div class="split-image">
-          <img src="B18B5337-6355-413F-82C4-83618936EF28.PNG" alt="Doces variados" loading="lazy">
-        </div>
-        <div class="split-copy">
-          <span class="eyebrow">Conteúdo Prático</span>
-          <h3>Conteúdo Além da Receita</h3>
-          <p>Não é só receita. Você recebe guias sobre produção, organização de cozinha, precificação, cálculo de custos, e estratégias de delivery. Tudo pensado para quem quer transformar paixão por cozinhar em negócio.</p>
-          <ul>
-            <li>Organização de cozinha</li>
-            <li>Cálculo de custos</li>
-            <li>Estratégias de venda</li>
-            <li>Dicas de embalagem</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Seção: Produção -->
-    <section class="section">
-      <div class="container split">
-        <div class="split-image">
-          <img src="D5FE257C-1011-4855-9AB2-6C4FA78C1DC9.PNG" alt="Dicas de produção" loading="lazy">
-        </div>
-        <div class="split-copy">
-          <span class="eyebrow">Para Organizar</span>
-          <h3>Produção e Organização</h3>
-          <p>Entenda como estruturar sua cozinha, gerenciar o tempo, otimizar recursos e manter a qualidade em cada preparação. Conteúdo para produção iniciante ou expansão de negócio.</p>
-          <ul>
-            <li>Gestão de tempo</li>
-            <li>Planejamento de produção</li>
-            <li>Organização de espaço</li>
-            <li>Qualidade garantida</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Seção: Oferta Principal -->
-    <section class="section green">
-      <div class="container offer">
+      <div class="container offer-wrap">
         <div class="offer-visual">
-          <img src="CDE17215-1ECA-42E5-846F-2D4A32AF33E6.PNG" alt="Oferta especial do método" loading="lazy">
+          <img src="CDE17215-1ECA-42E5-846F-2D4A32AF33E6.PNG" alt="Oferta do método" loading="lazy">
         </div>
         <div class="offer-copy">
-          <span class="eyebrow">Promoção Especial</span>
-          <h2>Comece com 650 Receitas</h2>
-          <p>Receitas de salgados e doces + conteúdos sobre produção, organização, precificação e delivery.</p>
-          
+          <span class="eyebrow">Oferta especial</span>
+          <h3>Comece com 650 receitas e acelere sua cozinha</h3>
+          <p>Receitas de salgados e doces + conteúdos sobre produção, organização, precificação e delivery para você começar com mais segurança.</p>
+
           <div class="offer-promo">
-            <div class="promo-text">CONDIÇÃO PROMOCIONAL DISPONÍVEL AGORA</div>
-            <div class="old-price">De R$ 147,00</div>
-            <div class="new-price">R$ 27,00</div>
+            <div class="promo-copy">Condição promocional disponível agora</div>
+            <span class="old">De R$ 147,00</span>
+            <span class="new">R$ 27,00</span>
           </div>
-          
-          <a class="btn buy" href="https://pay.kiwify.com.br/3Y5RTDC?afid=GumG4jeK" style="display:block">QUERO GARANTIR MEU ACESSO</a>
-          
-          <p class="microcopy" style="margin-top:20px">Acesso digital ao conteúdo • Garantia de 7 dias</p>
+
+          <a class="btn buy" href="https://pay.kiwify.com.br/3Y5RTDC?afid=GumG4jeK">Quero garantir meu acesso</a>
         </div>
       </div>
     </section>
 
-    <!-- Seção: FAQ -->
     <section class="section cream">
       <div class="container">
-        <div class="intro">
-          <span class="eyebrow">Dúvidas</span>
-          <h2>Perguntas Frequentes</h2>
+        <div class="section-header">
+          <span class="eyebrow">Perguntas frequentes</span>
+          <h2>Dúvidas mais comuns</h2>
         </div>
+
         <div class="faq">
-          <details>
+          <details open>
             <summary>Funciona para quem está começando?</summary>
             <p>O conteúdo foi organizado para consulta no seu ritmo, tanto para quem está começando quanto para quem já prepara produtos e quer ampliar o cardápio.</p>
           </details>
-          
+
           <details>
             <summary>O que está incluído?</summary>
             <p>São 650 receitas e conteúdos relacionados a salgados, doces, produção, precificação e delivery.</p>
           </details>
-          
+
           <details>
             <summary>Como recebo o acesso?</summary>
             <p>Após a confirmação da compra, siga as instruções de acesso apresentadas pelo produtor no checkout.</p>
           </details>
-          
+
           <details>
             <summary>Existe garantia?</summary>
             <p>Sim. A oferta informa garantia de 7 dias, conforme os termos apresentados no checkout.</p>
           </details>
-          
+
           <details>
             <summary>Preciso já saber cozinhar profissionalmente?</summary>
             <p>Não. Você pode acompanhar as receitas e orientações no seu ritmo.</p>
@@ -325,17 +383,29 @@
         </div>
       </div>
     </section>
+
+    <div class="cta-band">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <h3>Seu próximo passo pode mudar sua cozinha</h3>
+            <p>Comece com um método que te ajuda a crescer com receitas, organização e estratégia por um valor que faz sentido.</p>
+          </div>
+          <a class="btn buy" href="https://pay.kiwify.com.br/3Y5RTDC?afid=GumG4jeK">Quero começar agora</a>
+        </div>
+      </div>
+    </div>
   </main>
-  
+
   <footer class="footer">
     <div class="container">
       <p>Página independente de divulgação como afiliado. Não há garantia de renda ou resultados financeiros. As condições definitivas são as apresentadas no checkout da plataforma de pagamento.</p>
-      <p>&copy; 2024 Cozinha que Rende. Todos os direitos reservados.</p>
+      <p>© 2024 Cozinha que Rende. Todos os direitos reservados.</p>
     </div>
   </footer>
-  
-  <a class="sticky btn buy" href="https://pay.kiwify.com.br/3Y5RTDC?afid=GumG4jeK">Quero começar agora →</a>
-  
+
+  <a class="sticky-btn btn buy" href="https://pay.kiwify.com.br/3Y5RTDC?afid=GumG4jeK">Quero começar agora →</a>
+
   <script>
     document.querySelectorAll('.buy').forEach(function(a){
       a.addEventListener('click',function(){
