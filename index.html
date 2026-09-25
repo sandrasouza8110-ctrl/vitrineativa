@@ -82,8 +82,10 @@
     .split{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center}
     .split.reverse{direction:rtl}
     .split.reverse > *{direction:ltr}
-    .image-card{background:#f8f1eb;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 18px 32px var(--shadow)}
+    .image-card{position:relative;background:#f8f1eb;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 18px 32px var(--shadow)}
     .image-card img{display:block;width:100%;height:100%;object-fit:contain;object-position:center top}
+    .image-overlay{position:absolute;background:linear-gradient(180deg, rgba(245,239,233,0.95) 0%, rgba(245,239,233,0.92) 100%);border-radius:0;z-index:10;display:flex;align-items:center;justify-content:center}
+    .image-overlay .btn{margin:0}
     .split-copy h3{margin:0 0 12px;font-family:'Playfair Display',serif;font-size:clamp(2rem,3vw,2.75rem);line-height:1.06;letter-spacing:-.03em}
     .split-copy p{margin:0 0 14px;font-size:1.02rem;line-height:1.8}
     .check-list{list-style:none;padding:0;margin:18px 0 0}
@@ -107,7 +109,7 @@
     .proof-card img{display:block;width:100%;height:auto;object-fit:contain}
 
     .offer-wrap{display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:center}
-    .offer-visual{background:#f8f1eb;border:1px solid rgba(217,177,77,.45);border-radius:18px;overflow:hidden;box-shadow:0 20px 28px rgba(0,0,0,.08)}
+    .offer-visual{position:relative;background:#f8f1eb;border:1px solid rgba(217,177,77,.45);border-radius:18px;overflow:hidden;box-shadow:0 20px 28px rgba(0,0,0,.08)}
     .offer-visual img{display:block;width:100%;height:100%;object-fit:contain;object-position:center top}
     .offer-copy h3{margin:0 0 12px;font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.1rem);line-height:1.06;letter-spacing:-.04em}
     .offer-copy p{margin:0 0 18px;line-height:1.8}
@@ -265,18 +267,21 @@
 
     <section class="section cream">
       <div class="container split reverse">
-        <div class="image-card">
-          <img src="42790CA4-5E95-4809-8377-67917F455F33.PNG" alt="Variedade de produtos" loading="lazy">
+        <div class="image-card" id="img-d5fe">
+          <img src="D5FE257C-1011-4855-9AB2-6C4FA78C1DC9.PNG" alt="Bônus e materiais extras" loading="lazy">
+          <div class="image-overlay" style="bottom:10%;left:0;right:0;height:15%;width:100%">
+            <a class="btn buy" href="https://pay.kiwify.com.br/3Y5RTDC?afid=GumG4jeK">QUERO COMEÇAR AGORA →</a>
+          </div>
         </div>
         <div class="split-copy">
-          <span class="eyebrow">Variedade</span>
-          <h3>Mais opções para atender diferentes gostos e demandas</h3>
-          <p>Ao diversificar o cardápio e entender a operação, você consegue melhorar a experiência do cliente e aumentar seu potencial de venda.</p>
+          <span class="eyebrow">Bônus e materiais extras</span>
+          <h3>Recursos que aumentam a praticidade</h3>
+          <p>Esse material complementa a parte prática do curso e ajuda a reduzir dúvidas na hora de precificar, organizar a operação e melhorar a apresentação do negócio.</p>
           <ul class="check-list">
-            <li>Mais opções no cardápio</li>
-            <li>Produto com melhor apresentação</li>
-            <li>Organização para o preparo</li>
-            <li>Mais conforto na operação</li>
+            <li>Ferramentas extras para uso diário</li>
+            <li>Mais clareza na precificação</li>
+            <li>Organização para produção e vendas</li>
+            <li>Mais profissionalismo</li>
           </ul>
         </div>
       </div>
@@ -284,8 +289,11 @@
 
     <section class="section cream">
       <div class="container split">
-        <div class="image-card">
-          <img src="44789335-CE8E-4A82-89F9-AF988E4D510C.PNG" alt="Produção e estratégia" loading="lazy">
+        <div class="image-card" id="img-42790">
+          <img src="42790CA4-5E95-4809-8377-67917F455F33.PNG" alt="Produção e estratégia" loading="lazy">
+          <div class="image-overlay" style="bottom:10%;left:0;right:0;height:15%;width:100%">
+            <a class="btn buy" href="https://pay.kiwify.com.br/3Y5RTDC?afid=GumG4jeK">QUERO COMEÇAR AGORA →</a>
+          </div>
         </div>
         <div class="split-copy">
           <span class="eyebrow">Produção e estratégia</span>
@@ -330,27 +338,11 @@
 
     <section class="section cream">
       <div class="container split reverse">
-        <div class="image-card">
-          <img src="D5FE257C-1011-4855-9AB2-6C4FA78C1DC9.PNG" alt="Bônus e materiais extras" loading="lazy">
-        </div>
-        <div class="split-copy">
-          <span class="eyebrow">Bônus e materiais extras</span>
-          <h3>Recursos que aumentam a praticidade</h3>
-          <p>Esse material complementa a parte prática do curso e ajuda a reduzir dúvidas na hora de precificar, organizar a operação e melhorar a apresentação do negócio.</p>
-          <ul class="check-list">
-            <li>Ferramentas extras para uso diário</li>
-            <li>Mais clareza na precificação</li>
-            <li>Organização para produção e vendas</li>
-            <li>Mais profissionalismo</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section cream">
-      <div class="container split">
-        <div class="image-card">
-          <img src="0EC4CFC9-C866-480C-8151-ADB5ED46B5ED.PNG" alt="Benefícios e suporte" loading="lazy">
+        <div class="image-card" id="img-1abe">
+          <img src="1ABE8B6D-3A54-44A2-92F4-1335932BDFB6.PNG" alt="Acesso e suporte" loading="lazy">
+          <div class="image-overlay" style="bottom:10%;left:0;right:0;height:15%;width:100%">
+            <a class="btn buy" href="https://pay.kiwify.com.br/3Y5RTDC?afid=GumG4jeK">QUERO COMEÇAR AGORA →</a>
+          </div>
         </div>
         <div class="split-copy">
           <span class="eyebrow">Acesso e suporte</span>
@@ -367,9 +359,12 @@
     </section>
 
     <section class="section cream">
-      <div class="container split reverse">
-        <div class="image-card">
+      <div class="container split">
+        <div class="image-card" id="img-09604">
           <img src="09604F89-59C7-4B31-9837-DA99814C7281.PNG" alt="Receitas e produto final" loading="lazy">
+          <div class="image-overlay" style="bottom:10%;left:0;right:0;height:15%;width:100%">
+            <a class="btn buy" href="https://pay.kiwify.com.br/3Y5RTDC?afid=GumG4jeK">QUERO COMEÇAR AGORA →</a>
+          </div>
         </div>
         <div class="split-copy">
           <span class="eyebrow">Finalização</span>
@@ -386,7 +381,7 @@
     </section>
 
     <section class="section cream">
-      <div class="container split">
+      <div class="container split reverse">
         <div class="image-card">
           <img src="CEB4AF96-2AA4-4BD4-AC06-B0A2EDCBAAC7.PNG" alt="Conteúdo complementar do curso" loading="lazy">
         </div>
