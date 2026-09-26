@@ -352,6 +352,8 @@ document.querySelectorAll('.buy').forEach(function(a){
   a.addEventListener('click',function(){
     if(typeof fbq==='function'){
       fbq('track','ViewContent',{content_name:'Método Cozinha que Rende',content_type:'product',value:27.00,currency:'BRL'});
+      fbq('track','InitiateCheckout',{content_name:'Método Cozinha que Rende',content_type:'product',value:27.00,currency:'BRL'});
+      fbq('track','Lead',{content_name:'Método Cozinha que Rende',value:27.00,currency:'BRL'});
     }
   });
 });
