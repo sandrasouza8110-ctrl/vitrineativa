@@ -72,13 +72,13 @@ a{text-decoration:none;color:inherit}
 .inc-card li{position:relative;padding-left:18px;margin:6px 0;font-size:.85rem;opacity:.95}
 .inc-card li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:800}
 .imgs-grid{display:grid;grid-template-columns:1fr;gap:1rem}
-.imgs-grid .thumb{border-radius:12px;overflow:hidden;border:1px solid var(--line);box-shadow:0 8px 16px var(--shadow)}
-.imgs-grid .thumb img{width:100%;height:clamp(220px,42vw,320px);object-fit:cover;display:block}
+.imgs-grid .thumb{max-width:420px;margin:0 auto;border-radius:12px;overflow:hidden;border:1px solid var(--line);box-shadow:0 8px 16px var(--shadow)}
+.imgs-grid .thumb img{width:100%;height:auto;display:block}
 .imgs-grid .thumb .cap{display:block;font-size:.68rem;text-align:center;padding:.4rem .35rem;color:var(--ink);opacity:.75;background:#fff;line-height:1.35}
 .proof-intro{max-width:560px;margin:0 auto 12px;text-align:center;font-size:.92rem;line-height:1.5;color:#f3e6d8;opacity:.92}
 .proof-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.proof-card{background:#fff;border:1px solid rgba(217,177,77,.5);border-radius:14px;overflow:hidden;box-shadow:0 14px 22px rgba(0,0,0,.08)}
-.proof-card img{width:100%;height:clamp(280px,48vw,400px);object-fit:contain;display:block;background:#fff}
+.proof-card{max-width:360px;margin:0 auto;background:#fff;border:1px solid rgba(217,177,77,.5);border-radius:14px;overflow:hidden;box-shadow:0 14px 22px rgba(0,0,0,.08)}
+.proof-card img{width:100%;height:auto;display:block;background:#fff}
 .offer-compact{max-width:24rem;width:100%;margin:.9rem auto 0;text-align:center;background:rgba(217,177,77,.08);border:1px solid rgba(217,177,77,.7);border-radius:1rem;padding:1rem 1.1rem 1.15rem}
 .offer-compact .lead{font-weight:700;font-size:1rem;margin-bottom:.75rem;line-height:1.4}
 .offer-compact .old{display:block;font-size:1rem;text-decoration:line-through;text-decoration-thickness:2px;text-decoration-color:currentColor;color:#b8a99e;line-height:1.4;margin-bottom:.4rem}
@@ -131,8 +131,6 @@ a{text-decoration:none;color:inherit}
   .price-block{max-width:18rem;padding:.9rem .95rem 1rem}
   .grid3{grid-template-columns:repeat(2,minmax(0,1fr))}
   .includes-grid,.proof-grid,.bonus-list{grid-template-columns:1fr}
-  .imgs-grid .thumb img{height:240px}
-  .proof-card img{height:320px}
   .sticky-btn{left:12px;right:12px;bottom:10px}
 }
 </style>
@@ -140,7 +138,7 @@ a{text-decoration:none;color:inherit}
 <body>
 <div class="topbar">Método digital • receitas + produção + precificação + venda</div>
 <header class="hero">
-  <img class="hero-media" src="salgados.jpg" alt="" fetchpriority="high" decoding="async" width="1168" height="784">
+  <img class="hero-media" src="salgados.jpg" alt="Salgados variados representando as receitas ensinadas no método" fetchpriority="high" decoding="async" width="1168" height="784">
   <div class="container hero-grid">
     <span class="eyebrow fade-up">Cozinha que rende</span>
     <h1 class="fade-up">+<strong>650 receitas</strong> de salgados e doces</h1>
